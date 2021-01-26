@@ -159,6 +159,18 @@ set_package_properties(Freetype PROPERTIES DESCRIPTION "A font rendering engine"
                        PURPOSE "Needed to build kfontinst, a simple font installer."
                       )
 
+
+find_package(KIOExtras)
+set_package_properties(KIOExtras PROPERTIES DESCRIPTION "Common KIO slaves for operations."
+                                       PURPOSE "Show thumbnails in wallpaper selection."
+                                       TYPE RUNTIME
+                                        )
+
+find_package(KIOFuse)
+set_package_properties(KIOFuse PROPERTIES DESCRIPTION "Provide KIO support to legacy applications. "
+                                      TYPE RUNTIME
+                                      )
+
 # Clipboard applet
 ecm_find_qmlmodule(org.kde.prison 1.0)
 
