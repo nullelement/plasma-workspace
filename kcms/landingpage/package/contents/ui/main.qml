@@ -60,6 +60,27 @@ KCM.SimpleKCM {
                 settingName: "colorScheme"
             }
         }
+        RowLayout {
+            QQC2.RadioButton {
+                id: customTheme
+                checked: kcm.globalsSettings.colorScheme !== "BreezeLight" && kcm.globalsSettings.colorScheme !== "BreezeDark"
+                QQC2.ButtonGroup.group: themeGroup
+                onToggled: {
+                    if (checked) {
+                        kcm.openKCM("kcm_colors")
+                    }
+                }
+
+                KCM.SettingStateBinding {
+                    configObject: kcm.globalsSettings
+                    settingName: "colorScheme"
+                }
+            }
+            QQC2.Button {
+                text: i18n("Custom...")
+                onClicked: kcm.openKCM("kcm_colors")
+            }
+        }
 
         // We want to show the slider in a logarithmic way. ie
         // move from 4x, 3x, 2x, 1x, 0.5x, 0.25x, 0.125x

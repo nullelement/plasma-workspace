@@ -41,6 +41,8 @@ public:
     LandingPageGlobalsSettings *globalsSettings() const;
     BalooSettings *balooSettings() const;
 
+    void saveColors();
+
     Q_INVOKABLE void openWallpaperDialog();
     Q_INVOKABLE void openKCM(const QString &kcm);
 
@@ -49,6 +51,7 @@ public Q_SLOTS:
 
 private:
     LandingPageData *m_data;
+    bool m_colorsDirty = false;
 };
 
 #endif  // _KCM_LANDINGPAGE_H
