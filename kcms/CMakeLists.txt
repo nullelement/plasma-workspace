@@ -1,6 +1,7 @@
 add_subdirectory(desktoptheme)
 add_subdirectory(icons)
 add_subdirectory(translations)
+add_subdirectory(landingpage)
 
 if(KUserFeedback_FOUND)
     add_subdirectory(feedback)
