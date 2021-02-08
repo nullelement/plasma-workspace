@@ -96,6 +96,7 @@ void RecentDocuments::match(Plasma::RunnerContext &context)
         match.setIconName(KIO::iconNameForUrl(url));
         match.setRelevance(relevance);
         match.setData(QVariant(url));
+        match.setId(url.toString());
         if (url.isLocalFile()) {
             match.setActions(actions().values());
         }
